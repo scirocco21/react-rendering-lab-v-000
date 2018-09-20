@@ -2,7 +2,10 @@ import React from 'react';
 
 class Circle extends React.Component {
 
-  
+  // needs nextProps as argument to evaluate against current state
+  shouldComponentUpdate = nextProps => {
+    return nextProps.color !== this.props.color ? true : false
+  }
 
   render() {
     const { color } = this.props;
